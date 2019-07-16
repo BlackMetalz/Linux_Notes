@@ -25,6 +25,7 @@ UUID=c150c97e-fc78-45e1-89e0-47ce70887378 /data		  	  ext4	  noatime,nodiratime 
 `
 
 UUID get from blkid. Alway recommends use UUID because it is static.
+Example: when we mount with /dev/sdbx instead of UUID. So when we unpluged disk for swap or something like that. mount dir can be read wrong because /dev/sdx isn't static. This is rarely happens but when i work in production server, I never seen disk mount by /dev/sdx :D. Just my working experience
 
 `
 /data ext4 noatime,nodiratime 0 2  ( Go here if you want more detail https://wiki.debian.org/fstab :v )
