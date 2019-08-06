@@ -15,6 +15,11 @@ I/O size (minimum/optimal): 512 bytes / 512 bytes
 mkfs.ext4 /dev/sdx
 `
 
+or 
+`
+mkfs -t ext4 /dev/sdx
+`
+
 Command above will create an ext4 file system on disk /dev/sdx
 
 Then we have to mount it.
