@@ -96,3 +96,13 @@ tmpfs           1.6G     0  1.6G   0% /run/user/1002
 
 We can see Available data changed. But i still recommend for keep it default as 5% reserved.
 That is just my note while learning and working.
+
+
+## XFS (vdc): Filesystem has duplicate UUID d04fa43b-39b7-4295-99a2-40521e64c795 - can't mount
+Reboot. Lulz
+
+Or get new UUID
+
+```
+xfs_admin -U generate /dev/vdc
+```
