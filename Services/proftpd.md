@@ -26,7 +26,7 @@ TLSCipherSuite
 # readable by anyone.
 #
 # chmod 0600 /etc/ssl/private/proftpd.key 
-# chmod 0640 /etc/ssl/private/proftpd.key
+# chmod 0640 /etc/ssl/private/proftpd.crt
 # 
 TLSRSACertificateFile                   /etc/proftpd/ssl/proftpd.crt
 TLSRSACertificateKeyFile                /etc/proftpd/ssl/proftpd.key
