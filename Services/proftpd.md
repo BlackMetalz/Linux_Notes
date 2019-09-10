@@ -115,3 +115,16 @@ TLSOptions NoSessionReuseRequired
 ```
 
 - Then restart the service. Have fun!
+
+
+### Gen password for proftpd
+
+Scripts
+```
+#!/usr/bin/python
+
+import crypt;
+
+x = raw_input('Enter password: ')
+print crypt.crypt(x, "$6$oZC3sKCq")
+```
