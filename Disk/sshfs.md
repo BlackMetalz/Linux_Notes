@@ -6,3 +6,4 @@ sshfs recsysnews@10.3.68.65:/data/recsysnews /data/recsysnews/ -o port=2395,iden
 ofc need ssh key already setup. 
 
 - In fstab for auto mount when server startup, insert in rc.local
+Duo this mount related to network, so we can avoid error if we use mount by /etc/fstab
