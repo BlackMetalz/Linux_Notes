@@ -13,3 +13,9 @@ ofc need ssh key already setup.  and UID & GUID should be some as in 10.5.0.222
 
 - In fstab for auto mount when server startup, insert in rc.local
 Duo this mount related to network, so we can avoid error if we use mount by /etc/fstab
+
+- But mostly we only need setup ssh key and do this simple command for mount sshfs
+```
+sshfs recsysnews@10.5.0.222:/data/recsysnews /data/recsysnews/ 
+```
+Note mount duplicate can redirect to error
