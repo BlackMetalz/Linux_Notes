@@ -1,4 +1,6 @@
 - Example related to Disk fucked and need to replace asap
+
+1. Ex 1
 ```
 /var/log/syslog.1:Oct 13 19:39:29 asdasd smartd[1480]: Device: /dev/sdb [SAT], SMART Prefailure Attribute: 1 Raw_Read_Error_Rate changed from 72 to 73
 /var/log/syslog.1:Oct 13 20:09:34 asdasd smartd[1480]: Device: /dev/sdb [SAT], SMART Prefailure Attribute: 1 Raw_Read_Error_Rate changed from 73 to 74
@@ -9,4 +11,11 @@
 /var/log/syslog.1:Oct 13 22:46:49 asdasd kernel: [    3.656382] RAS: Correctable Errors collector initialized.
 /var/log/syslog.1:Oct 13 22:46:49 asdasd kernel: [   11.381800] random: 7 urandom warning(s) missed due to ratelimiting
 /var/log/syslog.1:Oct 13 22:46:49 asdasd kernel: [   13.185681] EXT4-fs (sdb5): re-mounted. Opts: errors=remount-ro
+```
+
+
+2. Ex 2: raid
+
+```
+md/raid1: md126: sdb: uncorveredable I/O read error for block 3234234
 ```
