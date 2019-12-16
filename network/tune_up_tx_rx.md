@@ -44,3 +44,5 @@ TX:             256
 ```
 root@XXXX:~# ethtool -G eno1 rx 4096
 ```
+
+# It doesn't work, just a practice :))
