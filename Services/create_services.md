@@ -39,3 +39,6 @@ systemctl start your-service
 ```
 systemctl status your-service
 ```
+
+
+More details go here: https://www.opentechguides.com/how-to/article/centos/169/systemd-custom-service.html or gooogle
