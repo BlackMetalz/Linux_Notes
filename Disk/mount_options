@@ -1,0 +1,15 @@
+- noatime / nodiratime: disable writing access time to file / folder. Increase disk performance
+
+Some answer copy from google: 
+
+```
+Noatime will tell the filesystem not to record the last accessed date of the file. I think it increases speed because when a file is accessed (read from), it will also record that as being a time the file was accessed, and that writing to the file takes extra time, 
+as does writing that extra data when it is being written to.
+```
+
+```
+When unix was first developed they implemented something that many people think was a big mistake. Every time a file or directory is accessed, even just for an ls or stat read, the access time metafield (atime) gets updated. This means that there is a performance hit for just about everything you do.
+The noatime and nodiratime options disable the updating of atime, so that this "feature" is bypassed. However, this does have the side-effect of confusing a few applications.
+```
+
+-- Credit: https://www.linuxquestions.org/questions/linux-software-2/what-is-noatime-how-can-i-mount-a-partition-with-noatime-393617/
