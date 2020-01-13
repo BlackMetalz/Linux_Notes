@@ -3,3 +3,8 @@
 hdparm -I /dev/sdx | grep Model # Get the fucking Model Number
 hdparm -I /dev/sdx | grep Serial # get the fucking serial number
 ```
+- Incase disk is raid, use this instead of haparm
+
+```
+smartctl -i /dev/sdx | grep 'Serial'
+```
