@@ -8,5 +8,8 @@ route -n
 - hmmm
 
 ```
-ip route add 0.0.0.0/1 via 10.5.0.1
+ip route add 192.168.1.0/24 via 10.5.0.1
 ```
+
+10.5.0.1 is gateway
+192.168.1.0/24 is ip destination
