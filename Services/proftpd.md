@@ -128,3 +128,14 @@ import crypt;
 x = raw_input('Enter password: ')
 print crypt.crypt(x, "$6$oZC3sKCq")
 ```
+
+
+### user for proftpd
+
+```
+.passwd
+```
+since we dont require valid shell 
+```
+username:saltpassoutputabove:uid:gid:username:/home/folder:/bin/false
+```
