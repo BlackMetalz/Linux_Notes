@@ -8,3 +8,9 @@ hdparm -I /dev/sdx | grep Serial # get the fucking serial number
 ```
 smartctl -i /dev/sdx | grep 'Serial'
 ```
+
+- Incase of disk RO:
+
+```
+lsblk --nodeps -o name,serial
+```
