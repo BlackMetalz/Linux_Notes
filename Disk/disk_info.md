@@ -22,3 +22,8 @@ lsblk --nodeps -o name,serial
 E: ID_SERIAL=ST4000NM0033-9ZM170_Z1ZBJ9P7
 E: ID_SERIAL_SHORT=Z1ZBJ9P7
 ```
+
+- True serial?:
+```
+smartctl -a -d sat /dev/sg17  | grep serial
+```
