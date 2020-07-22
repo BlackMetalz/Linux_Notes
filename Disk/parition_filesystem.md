@@ -106,3 +106,19 @@ Or get new UUID
 ```
 xfs_admin -U generate /dev/vdc
 ```
+
+
+### some note about fdisk
+- fdisk only support mbr and mbr only support max to 2Tb size of partition. So we want to create new partition over 2Tb, use parted
+
+## Parted Usage
+- install parted
+
+```
+parted # Open Parted
+select/dev/sdx # Select disk device for partition
+mklabel gpt # Create label 
+mkpart primary 0 -1 # use full disk to create partition
+```
+
+Then use mkfs vv.vv
