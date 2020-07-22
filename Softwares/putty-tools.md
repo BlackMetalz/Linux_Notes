@@ -1,0 +1,1 @@
+- Convert ppk to open ssh key: https://superuser.com/questions/232362/how-to-convert-ppk-key-to-openssh-key-under-linux
