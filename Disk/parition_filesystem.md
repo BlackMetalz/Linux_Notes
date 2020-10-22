@@ -122,3 +122,8 @@ mkpart primary 0 -1 # use full disk to create partition
 ```
 
 Then use mkfs vv.vv
+
+
+## Error xfs_repair: /dev/sdb1 contains a mounted filesystem when xfs_repair
+Caused by: force unmount. lsof | grep /dev/sdb1 return null. But ps -ef | grep /deb/sdb1 return process running which targeting to /dev/sdb1
+Solution: Kill it then xfs_repair can works!
