@@ -31,6 +31,7 @@ More detail: https://www.digitalocean.com/community/tutorials/how-to-manage-logf
         nodateext
         postrotate
                 find /var/log/atop/ -mtime +3 -delete
+                find /var/log/atop/ -empty -delete
                 systemctl restart atop > /dev/null 2>&1
         endscript
 }
