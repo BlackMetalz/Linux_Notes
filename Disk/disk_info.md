@@ -51,24 +51,22 @@ dmesg -T
 [Sun Dec  6 01:32:31 2020] ata5.00: configured for UDMA/133
 [Sun Dec  6 01:32:31 2020] ata5: EH complete
 ```
-```
-[root@KIMOCHI ~]# lspci | grep -i sata
-00:11.4 SATA controller: Intel Corporation C610/X99 series chipset sSATA Controller [AHCI mode] (rev 05)
-00:1f.2 RAID bus controller: Intel Corporation C600/X79 series chipset SATA RAID Controller (rev 05)
-```
 
+In /sys/class/ata_port/ata${n}/device/, you can see a host${x} folder. E.g., on my machine:
 ```
-[root@SVR785C ~]# cat /sys/devices/pci0000\:00/0000\:00\:1f.2/ata5/host4/scsi_host/host4/unique_id 
-5 # This is the number we need
+gibby ~ # ls /sys/class/ata_port/ata1/device/
+ata_port  host0  link1  power  uevent
+gibby ~ # ls /sys/class/ata_port/ata2/device/
+ata_port  host1  link2  power  uevent
+gibby ~ # lsscsi
+[0:0:0:0]    disk    ATA      WDC WD1002FAEX-0 1D05  /dev/sda
+[1:0:0:0]    disk    ATA      WDC WD2001FFSX-6 0A81  /dev/sdb
+[2:0:0:0]    disk    ATA      WDC WD1002FAEX-0 1D05  /dev/sdc
+[3:0:0:0]    disk    ATA      WDC WD2001FFSX-6 0A81  /dev/sdd
+[5:0:0:0]    disk    ATA      SAMSUNG MZ7TD256 2L5Q  /dev/sde
 ```
-
+The ${x} in host${x} refers to that first number in the [0:0:0:0]. So for me ata1 refers to host0 which can also be represented in SCSI form as 0:*:
 ```
-dmesg | grep '5:.:.:.'
-[    3.563426] scsi 5:0:0:0: Direct-Access     ATA      Samsung SSD 850  2B6Q PQ: 0 ANSI: 5
-[    3.579720] sd 5:0:0:0: [sdb] 976773168 512-byte logical blocks: (500 GB/465 GiB)
-[    3.579973] sd 5:0:0:0: [sdb] Write Protect is off
-[    3.579980] sd 5:0:0:0: [sdb] Mode Sense: 00 3a 00 00
-[    3.580028] sd 5:0:0:0: [sdb] Write cache: enabled, read cache: enabled, doesn't support DPO or FUA
-[    3.582817] sd 5:0:0:0: [sdb] Attached SCSI disk
-[    5.501377] sd 5:0:0:0: Attached scsi generic sg1 type 0
+gibby ~ # lsscsi 0:\*
+[0:0:0:0]    disk    ATA      WDC WD1002FAEX-0 1D05  /dev/sda
 ```
