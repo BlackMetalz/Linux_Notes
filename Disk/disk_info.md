@@ -70,3 +70,10 @@ The ${x} in host${x} refers to that first number in the [0:0:0:0]. So for me ata
 gibby ~ # lsscsi 0:\*
 [0:0:0:0]    disk    ATA      WDC WD1002FAEX-0 1D05  /dev/sda
 ```
+
+
+### View disk raid info
+```
+mdadm -D /dev/md126
+```
+
