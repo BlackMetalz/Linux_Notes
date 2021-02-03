@@ -1,3 +1,9 @@
+# What is keepalived:
+
+Keepalived is used for IP failover between two servers. Its facilities for load balancing and high-availability to Linux-based infrastructures. It worked on VRRP (Virtual Router Redundancy Protocol) protocol. In this tutorial, we have configured IP failover between two Linux systems running as a load balancer for load balancing and high-availability infrastructures.
+
+
+
 1. Install in ubuntu 18-20
 ```
 apt install keepalived -y
