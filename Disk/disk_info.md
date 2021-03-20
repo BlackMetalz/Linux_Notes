@@ -70,7 +70,25 @@ The ${x} in host${x} refers to that first number in the [0:0:0:0]. So for me ata
 gibby ~ # lsscsi 0:\*
 [0:0:0:0]    disk    ATA      WDC WD1002FAEX-0 1D05  /dev/sda
 ```
-
+Other cases:
+```
+ata6.00: exception Emask 0x10 SAct 0x8 SErr 0x280100 action 0x6 frozen
+ata6.00: irq_stat 0x08000000, interface fatal error
+ata6: SError: { UnrecovData 10B8B BadCRC }
+ata6.00: failed command: READ FPDMA QUEUED
+ata6.00: cmd 60/00:18:00:44:0a/04:00:fd:01:00/40 tag 3 ncq 524288 in
+         res 40/00:18:00:44:0a/00:00:fd:01:00/40 Emask 0x10 (ATA bus error)
+ata6.00: status: { DRDY }
+ata6: hard resetting link
+ata6: SATA link up 6.0 Gbps (SStatus 133 SControl 300)
+ata6.00: configured for UDMA/133
+ata6: EH complete
+----------------------
+[4:0:0:0]    disk    ATA      ST4000NM0033-9ZM SN04  /dev/sda 
+[5:0:0:0]    disk    ATA      ST8000NM0055-1RM SN02  /dev/sdb 
+[6:0:0:0]    disk    ATA      ST8000NM0055-1RM SN02  /dev/sdc 
+```
+So we know it is /dev/sdc device
 
 ### View disk raid info
 ```
