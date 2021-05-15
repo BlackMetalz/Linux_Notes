@@ -1,4 +1,12 @@
-- Clone a disk using partclone
+-- Clone a disk using partclone
+We can use this to clone large disk size with low usage to lower disk size
+```
+Target partition size(107375 MB) is smaller than source(1073742 MB). Use option -C to disable size checking(Dangerous).
+Partclone fail, please check /var/log/partclone.log !
+```
+```
+partclone.ext4 -b -d -C -s /dev/vdb -o /dev/vdc
+```
 
 - Required package: partclone, nc
 
