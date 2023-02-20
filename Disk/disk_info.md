@@ -90,6 +90,17 @@ ata6: EH complete
 ```
 So we know it is /dev/sdc device
 
+Other case:
+```
+# Find ata6
+
+[root@svrid ~]# ls -l /sys/block/sd*
+lrwxrwxrwx 1 root root 0 Feb 20 09:33 /sys/block/sda -> ../devices/pci0000:00/0000:00:1f.2/host4/target4:0:0/4:0:0:0/block/sda
+lrwxrwxrwx 1 root root 0 Feb 20 09:33 /sys/block/sdb -> ../devices/pci0000:00/0000:00:1f.2/host5/target5:0:0/5:0:0:0/block/sdb
+lrwxrwxrwx 1 root root 0 Feb 20 09:33 /sys/block/sdc -> ../devices/pci0000:00/0000:00:1f.2/host6/target6:0:0/6:0:0:0/block/sdc
+--> ata6 is sdc
+```
+
 ### View disk raid info
 ```
 mdadm -D /dev/md126
