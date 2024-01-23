@@ -102,3 +102,6 @@ ata=6; ls -l /sys/block/sd* | grep $(grep $ata /sys/class/scsi_host/host*/unique
 mdadm -D /dev/md126
 ```
 
+### Mount disk not working after replace new disk
+- Old disk is fucked ( sdb ) and replaced by new disk ( sdc ), after format and mount but it isn't working, instead of reboot we can run `systemctl daemon-reload` then doing mount again, it will works!
+
